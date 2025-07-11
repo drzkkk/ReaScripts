@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="drzk" commit="9889852da4fd3286748daeda3bfc23387d430ee5">
+  <category name="Utility">
+    <reapack name="UtilityTool.jsfx" type="effect" desc="Utility (Vol, Pan, Width, Mono Low with Cutoff)">
+      <version name="1.0" author="drzk" time="2025-07-11T11:37:38Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source>https://github.com/drzkkk/ReaScripts/raw/9889852da4fd3286748daeda3bfc23387d430ee5/Utility/UtilityTool.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+</index>
