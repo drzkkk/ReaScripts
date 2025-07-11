@@ -10,3 +10,6 @@ Installation via ReaPack
 3. Paste this URL:
 https://github.com/drzkkk/reaper-scripts/raw/main/index.xml
 4. Click `OK` and browse available packages.
+
+My music and socials:
+https://linktr.ee/drzk
