@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="4b99e4dbdb8ed1a50d0b31cf42e8b6bc27b011b7">
+<index version="1" name="drzk" commit="b27f6ea2ae19728475ca591e828d1969a0482786">
+  <category name="Envelopes">
+    <reapack name="Smart_show_envelope_volume_for_track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) for tracks">
+      <version name="1.0" author="drzk" time="2025-07-11T14:59:28Z">
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/b27f6ea2ae19728475ca591e828d1969a0482786/Envelopes/Smart_show_envelope_volume_for_track.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Utility">
     <reapack name="UtilityTool.jsfx" type="effect" desc="Utility (Vol, Pan, Width, Mono Low with Cutoff) [drzk]">
       <version name="1.0" author="drzk" time="2025-07-11T11:37:38Z">
