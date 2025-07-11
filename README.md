@@ -12,4 +12,4 @@ https://github.com/drzkkk/reaper-scripts/raw/main/index.xml
 4. Click `OK` and browse available packages.
 
 My music and socials:
-[linktree]https://linktr.ee/drzk
+[click](https://linktr.ee/drzk)
