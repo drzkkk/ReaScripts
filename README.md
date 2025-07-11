@@ -5,8 +5,3 @@ It is compatible with the [ReaPack](https://reapack.com/) extension for easy ins
 
 You can add this repository to ReaPack manually:
 https://github.com/drzkkk/ReaScripts/raw/main/index.xml
-
-Feel free to reach out or follow:
-
-- Telegram: [@derzkiyordrzk]
-- GitHub: [https://github.com/drzkkk](https://github.com/drzkkk)]
