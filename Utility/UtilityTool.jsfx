@@ -1,0 +1,121 @@
+desc:Utility (Vol, Pan, Width, Mono Low with Cutoff)
+-- @version 1.0
+-- @description Utility (Vol, Pan, Width, Mono Low with Cutoff)
+-- @tags Utility
+-- @changelog First version
+-- @author drzk
+
+slider1:0<-60,12,0.1>Volume (dB)
+slider2:0<-100,100,1>Pan
+slider3:0<-100,100,1>Width
+slider4:0<0,1,1{Off,On}>Mono
+
+slider5:0<0,1,1{Off,On}>Mono Low
+slider6:100<20,500,1>Cutoff Freq (Hz)
+slider7:2<1,8,1>Filter Order (6-48 dB/oct)
+
+@init
+sample_rate = srate;
+
+lp1 = 0; lp2 = 0; lp3 = 0; lp4 = 0; lp5 = 0; lp6 = 0; lp7 = 0; lp8 = 0;
+
+@slider
+gain = 10^(slider1 / 20);
+
+pan = slider2 / 100;
+pan_l = cos((pan + 1) * 0.25 * $pi);
+pan_r = sin((pan + 1) * 0.25 * $pi);
+
+width = 1 + (slider3 / 100);
+
+mono = slider4;
+
+hpf_on = slider5;
+cutoff = slider6;
+order = slider7;
+
+wc = 2 * $pi * cutoff / sample_rate;
+alpha = wc / (wc + 1);
+
+@sample
+orig_l = spl0;
+orig_r = spl1;
+
+mid  = (spl0 + spl1) * 0.70710678;
+side = (spl0 - spl1) * 0.70710678;
+
+side *= width;
+
+filtered_side = side;
+
+hpf_on ? (
+  lp1 += alpha * (filtered_side - lp1);
+  hp1 = filtered_side - lp1;
+
+  order >= 2 ? (
+    lp2 += alpha * (hp1 - lp2);
+    hp2 = hp1 - lp2;
+  ) : (
+    hp2 = hp1;
+  );
+
+  order >= 3 ? (
+    lp3 += alpha * (hp2 - lp3);
+    hp3 = hp2 - lp3;
+  ) : (
+    hp3 = hp2;
+  );
+
+  order >= 4 ? (
+    lp4 += alpha * (hp3 - lp4);
+    hp4 = hp3 - lp4;
+  ) : (
+    hp4 = hp3;
+  );
+
+  order >= 5 ? (
+    lp5 += alpha * (hp4 - lp5);
+    hp5 = hp4 - lp5;
+  ) : (
+    hp5 = hp4;
+  );
+
+  order >= 6 ? (
+    lp6 += alpha * (hp5 - lp6);
+    hp6 = hp5 - lp6;
+  ) : (
+    hp6 = hp5;
+  );
+
+  order >= 7 ? (
+    lp7 += alpha * (hp6 - lp7);
+    hp7 = hp6 - lp7;
+  ) : (
+    hp7 = hp6;
+  );
+
+  order >= 8 ? (
+    lp8 += alpha * (hp7 - lp8);
+    hp8 = hp7 - lp8;
+  ) : (
+    hp8 = hp7;
+  );
+
+  filtered_side = hp8;
+
+) : (
+  filtered_side = side; // фильтр выкл
+);
+
+spl0 = mid + filtered_side;
+spl1 = mid - filtered_side;
+
+mono ? (
+  spl0 = spl1 = 0.5 * (spl0 + spl1);
+);
+
+spl0 *= pan_l;
+spl1 *= pan_r;
+
+spl0 *= gain;
+spl1 *= gain;
