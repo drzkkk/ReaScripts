@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="10e01a4761a7fd455abf52d20297d1d9a592acae">
+<index version="1" name="drzk" commit="5a5cece2cdde860449ded01df5bf7599433417cc">
+  <category name="Envelopes">
+    <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
+      <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/5a5cece2cdde860449ded01df5bf7599433417cc/Envelopes/Smart%20show%20envelope%20(volume)%20for%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Smart show envelopes for tracks.lua" type="script" desc="Smart show envelopes for tracks if no envelopes show Volume envelope (using Utility jsfx)">
+      <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/5a5cece2cdde860449ded01df5bf7599433417cc/Envelopes/Smart%20show%20envelopes%20for%20tracks.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Utility">
     <reapack name="UtilityTool.jsfx" type="effect" desc="Utility (Vol, Pan, Width, Mono Low with Cutoff) [drzk]">
       <version name="1.0" author="drzk" time="2025-07-11T11:37:38Z">
