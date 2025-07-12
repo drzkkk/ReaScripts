@@ -1,5 +1,5 @@
 -- @description Set velocity 100 for selected or all MIDI notes
--- @version 1.0
+-- @version 1.1
 -- @tags midi, velocity, notes
 -- @changelog First version
 -- @author drzk
