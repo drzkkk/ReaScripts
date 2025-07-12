@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="5a5cece2cdde860449ded01df5bf7599433417cc">
+<index version="1" name="drzk" commit="b6d89546884b2d44fa3fda2acd9fe3d761e5eb81">
   <category name="Envelopes">
     <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
@@ -11,6 +11,22 @@
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="main">https://github.com/drzkkk/ReaScripts/raw/5a5cece2cdde860449ded01df5bf7599433417cc/Envelopes/Smart%20show%20envelopes%20for%20tracks.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="FX Management">
+    <reapack name="Auto move instrument FX to top of chain (background).lua" type="script" desc="Auto move instrument FX to top of chain (background)">
+      <version name="1.0" author="drzk" time="2025-07-12T13:53:27Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/b6d89546884b2d44fa3fda2acd9fe3d761e5eb81/FX%20Management/Auto%20move%20instrument%20FX%20to%20top%20of%20chain%20(background).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Track Naming">
+    <reapack name="Auto name track from instrument FX or Media (cleaned) (background).lua" type="script" desc="Auto name track from instrument FX or Media (cleaned) (background)">
+      <version name="1.0" author="drzk" time="2025-07-12T13:53:27Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/b6d89546884b2d44fa3fda2acd9fe3d761e5eb81/Track%20Naming/Auto%20name%20track%20from%20instrument%20FX%20or%20Media%20(cleaned)%20(background).lua</source>
       </version>
     </reapack>
   </category>
