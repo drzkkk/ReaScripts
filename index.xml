@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="8c7e6349606663e736bc5c1e4269331a9d7e8069">
+<index version="1" name="drzk" commit="7b7f1a090134836c63d5872147397c43ed29a25e">
   <category name="Envelopes">
     <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
@@ -142,6 +142,10 @@
       <version name="1.0" author="drzk" time="2025-07-12T22:42:52Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Set%20velocity%20100%20for%20selected%20or%20all%20MIDI%20notes.lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-07-12T23:31:15Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/7b7f1a090134836c63d5872147397c43ed29a25e/MIDI%20Editor/Set%20velocity%20100%20for%20selected%20or%20all%20MIDI%20notes.lua</source>
       </version>
     </reapack>
     <reapack name="Split selected or all MIDI notes on grid.lua" type="script" desc="Split selected or all MIDI notes on grid">
