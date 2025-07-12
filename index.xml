@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="b6d89546884b2d44fa3fda2acd9fe3d761e5eb81">
+<index version="1" name="drzk" commit="0cc6bbcb78372cf605b7363d8db1068add9f267f">
   <category name="Envelopes">
     <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
@@ -19,6 +19,125 @@
       <version name="1.0" author="drzk" time="2025-07-12T13:53:27Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="main">https://github.com/drzkkk/ReaScripts/raw/b6d89546884b2d44fa3fda2acd9fe3d761e5eb81/FX%20Management/Auto%20move%20instrument%20FX%20to%20top%20of%20chain%20(background).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MIDI Editing">
+    <reapack name="Arpeggio MIDI Generator.lua" type="script" desc="Arpeggio Generator">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Arpeggio%20MIDI%20Generator.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Delete selected MIDI notes or note under mouse if none selected.lua" type="script" desc="Delete selected MIDI notes or note under mouse if none selected">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Delete%20selected%20MIDI%20notes%20or%20note%20under%20mouse%20if%20none%20selected.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Duplicate MIDI notes with smart shift, without moving edit cursor.lua" type="script" desc="Duplicate MIDI notes with smart shift, without moving edit cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Duplicates selected MIDI notes with an intelligent time shift. Keeps the edit cursor position unchanged.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="MPL + small improvements by drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Duplicate%20MIDI%20notes%20with%20smart%20shift,%20without%20moving%20edit%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Duplicate selected MIDI notes one semitone down.lua" type="script" desc="Duplicate selected MIDI notes one semitone down">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Duplicate%20selected%20MIDI%20notes%20one%20semitone%20down.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Duplicate selected MIDI notes one semitone up.lua" type="script" desc="Duplicate selected MIDI notes one semitone up">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Duplicate%20selected%20MIDI%20notes%20one%20semitone%20up.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Insert 2-bar MIDI item, set edit cursor position, open MIDI editor.lua" type="script" desc="Insert 2-bar MIDI item, set edit cursor position, open MIDI editor">
+      <version name="1.0" author="MPL + mini improves by drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Insert%202-bar%20MIDI%20item,%20set%20edit%20cursor%20position,%20open%20MIDI%20editor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Move MIDI notes down one octave if none selected, move all notes.lua" type="script" desc="Move MIDI notes down one octave if none selected, move all notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Move%20MIDI%20notes%20down%20one%20octave%20if%20none%20selected,%20move%20all%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Move MIDI notes down one semitone if none selected, move all notes.lua" type="script" desc="Move MIDI notes down one semitone if none selected, move all notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Move%20MIDI%20notes%20down%20one%20semitone%20if%20none%20selected,%20move%20all%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Move MIDI notes up one octave if none selected, move all notes.lua" type="script" desc="Move MIDI notes up one octave if none selected, move all notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Move%20MIDI%20notes%20up%20one%20octave%20if%20none%20selected,%20move%20all%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Move MIDI notes up one semitone if none selected, move all notes.lua" type="script" desc="Move MIDI notes up one semitone if none selected, move all notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Move%20MIDI%20notes%20up%20one%20semitone%20if%20none%20selected,%20move%20all%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Select MIDI note to above of current selection.lua" type="script" desc="Select MIDI note to above of current selection">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Select%20MIDI%20note%20to%20above%20of%20current%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Select MIDI note to below of current selection.lua" type="script" desc="Select MIDI note to below of current selection">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Select%20MIDI%20note%20to%20below%20of%20current%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Select MIDI note to the left of current selection.lua" type="script" desc="Select MIDI note to the left of current selection">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Select%20MIDI%20note%20to%20the%20left%20of%20current%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Select MIDI note to the right of current selection.lua" type="script" desc="Select MIDI note to the right of current selection">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Select%20MIDI%20note%20to%20the%20right%20of%20current%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Set velocity 100 for selected or all MIDI notes.lua" type="script" desc="Set velocity 100 for selected or all MIDI notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Set%20velocity%20100%20for%20selected%20or%20all%20MIDI%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Split selected or all MIDI notes on grid.lua" type="script" desc="Split selected or all MIDI notes on grid">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Split%20selected%20or%20all%20MIDI%20notes%20on%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Toggle mute for selected MIDI notes or note under mouse if none selected.lua" type="script" desc="Toggle mute for selected MIDI notes or note under mouse if none selected">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Toggle%20mute%20for%20selected%20MIDI%20notes%20or%20note%20under%20mouse%20if%20none%20selected.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Toggle select odd or even MIDI notes from all notes.lua" type="script" desc="Toggle select odd or even MIDI notes from all notes">
+      <version name="1.0" author="drzk" time="2025-07-12T22:39:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/0cc6bbcb78372cf605b7363d8db1068add9f267f/MIDI%20Editing/Toggle%20select%20odd%20or%20even%20MIDI%20notes%20from%20all%20notes.lua</source>
       </version>
     </reapack>
   </category>
