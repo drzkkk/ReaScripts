@@ -1,5 +1,5 @@
 -- @description Arpeggio Generator
--- @version 1.0
+-- @version 1.1
 -- @tags arpeggio, midi, notes
 -- @changelog First version
 -- @author drzk
