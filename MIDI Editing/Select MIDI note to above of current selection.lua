@@ -1,0 +1,53 @@
+-- @description Select MIDI note to above of current selection
+-- @version 1.0
+-- @tags midi, notes, select
+-- @changelog First version
+-- @author drzk
+
+local editor = reaper.MIDIEditor_GetActive()
+if not editor then return end
+local take = reaper.MIDIEditor_GetTake(editor)
+if not take then return end
+
+local _, note_count = reaper.MIDI_CountEvts(take)
+if note_count == 0 then return end
+
+local current_note = nil
+for i=0, note_count-1 do
+  local _, selected, _, startppq, _, _, pitch = reaper.MIDI_GetNote(take,i)
+  if selected then
+    current_note = {startppq=startppq, pitch=pitch}
+    break
+  end
+end
+if not current_note then return end
+
+local TIME_SCALE = 480
+
+local candidates = {}
+for i=0, note_count-1 do
+  local _, _, _, startppq, _, _, pitch = reaper.MIDI_GetNote(take,i)
+  if pitch > current_note.pitch then
+    table.insert(candidates, {index=i, startppq=startppq, pitch=pitch})
+  end
+end
+if #candidates == 0 then return end
+
+local function distance(cand)
+  local dp = cand.pitch - current_note.pitch
+  local dt = (cand.startppq - current_note.startppq) / TIME_SCALE
+  return math.sqrt(dp*dp + dt*dt)
+end
+
+table.sort(candidates, function(a,b) return distance(a) < distance(b) end)
+local target = candidates[1]
+
+for i=0, note_count-1 do
+  local retval, sel, mut, sppq, eppq, ch, pit, vel = reaper.MIDI_GetNote(take,i)
+  reaper.MIDI_SetNote(take,i,false,mut,sppq,eppq,ch,pit,vel,false)
+end
+
+local retval, _, mut, sppq, eppq, ch, pit, vel = reaper.MIDI_GetNote(take,target.index)
+reaper.MIDI_SetNote(take,target.index,true,mut,sppq,eppq,ch,pit,vel,false)
+
+reaper.MIDI_Sort(take)
