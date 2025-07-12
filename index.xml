@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="cd84cb46438a29d77659740af33b38c4b4fdff71">
+<index version="1" name="drzk" commit="8c7e6349606663e736bc5c1e4269331a9d7e8069">
   <category name="Envelopes">
     <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
@@ -103,11 +103,19 @@
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Select%20MIDI%20note%20to%20above%20of%20current%20selection.lua</source>
       </version>
+      <version name="1.1" author="drzk" time="2025-07-12T23:30:25Z">
+        <changelog><![CDATA[Added logic to select lowest note if none selected]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/8c7e6349606663e736bc5c1e4269331a9d7e8069/MIDI%20Editor/Select%20MIDI%20note%20to%20above%20of%20current%20selection.lua</source>
+      </version>
     </reapack>
     <reapack name="Select MIDI note to below of current selection.lua" type="script" desc="Select MIDI note to below of current selection">
       <version name="1.0" author="drzk" time="2025-07-12T22:42:52Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Select%20MIDI%20note%20to%20below%20of%20current%20selection.lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-07-12T23:30:25Z">
+        <changelog><![CDATA[Added logic to select highest note if none selected]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/8c7e6349606663e736bc5c1e4269331a9d7e8069/MIDI%20Editor/Select%20MIDI%20note%20to%20below%20of%20current%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Select MIDI note to the left of current selection.lua" type="script" desc="Select MIDI note to the left of current selection">
@@ -115,11 +123,19 @@
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Select%20MIDI%20note%20to%20the%20left%20of%20current%20selection.lua</source>
       </version>
+      <version name="1.1" author="drzk" time="2025-07-12T23:30:25Z">
+        <changelog><![CDATA[Added logic to select latest note if none selected]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/8c7e6349606663e736bc5c1e4269331a9d7e8069/MIDI%20Editor/Select%20MIDI%20note%20to%20the%20left%20of%20current%20selection.lua</source>
+      </version>
     </reapack>
     <reapack name="Select MIDI note to the right of current selection.lua" type="script" desc="Select MIDI note to the right of current selection">
       <version name="1.0" author="drzk" time="2025-07-12T22:42:52Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Select%20MIDI%20note%20to%20the%20right%20of%20current%20selection.lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-07-12T23:30:25Z">
+        <changelog><![CDATA[Added logic to select earliest note if none is selected]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/8c7e6349606663e736bc5c1e4269331a9d7e8069/MIDI%20Editor/Select%20MIDI%20note%20to%20the%20right%20of%20current%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Set velocity 100 for selected or all MIDI notes.lua" type="script" desc="Set velocity 100 for selected or all MIDI notes">
