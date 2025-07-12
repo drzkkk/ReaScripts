@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="173747c91aefac4e78cc5739e56d81059a051061">
+<index version="1" name="drzk" commit="d48b2440600f2b1538f6088aa8187fefe314e7f3">
   <category name="Envelopes">
     <reapack name="Smart show envelope (volume) for track.lua" type="script" desc="Smart show volume envelope (using Utility jsfx) if already added show all envelopes">
       <version name="1.0" author="drzk" time="2025-07-12T13:01:07Z">
@@ -27,6 +27,10 @@
       <version name="1.0" author="drzk" time="2025-07-12T22:42:52Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/173747c91aefac4e78cc5739e56d81059a051061/MIDI%20Editor/Arpeggio%20MIDI%20Generator.lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-07-12T22:44:41Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="midi_editor">https://github.com/drzkkk/ReaScripts/raw/d48b2440600f2b1538f6088aa8187fefe314e7f3/MIDI%20Editor/Arpeggio%20MIDI%20Generator.lua</source>
       </version>
     </reapack>
     <reapack name="Delete selected MIDI notes or note under mouse if none selected.lua" type="script" desc="Delete selected MIDI notes or note under mouse if none selected">
