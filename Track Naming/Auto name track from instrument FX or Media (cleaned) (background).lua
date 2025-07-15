@@ -1,6 +1,6 @@
 -- @description Auto name track from instrument FX or Media (cleaned) (background)
--- @version 1.0
--- @changelog First version
+-- @version 1.1
+-- @changelog Fixed tags
 -- @tags fx, fx chain, instrument, name, auto
 -- @author drzk
 
@@ -56,6 +56,19 @@ local function CheckSpecialName(name)
     return "Vocal"
   end
   if lname:find("loop") then
+    if lname:find("melody") then return "Melody loop" end
+    if lname:find("lead") then return "Lead loop" end
+    if lname:find("synth") then return "Synth loop" end
+    if lname:find("pad") then return "Pad loop" end
+    if lname:find("bass") then return "Bass loop" end
+    if lname:find("arp") then return "Arp loop" end
+    if lname:find("chord") then return "Chord loop" end
+    if lname:find("organ") then return "Organ loop" end
+    if lname:find("orchestra") then return "Orchestra loop" end
+    if lname:find("guitar") then return "Guitar loop" end
+    if lname:find("granular") then return "Granular loop" end
+    if lname:find("texture") then return "Texture loop" end
+    if lname:find("melodic") then return "Melodic loop" end
     if lname:find("shaker") then return "Shaker loop" end
     if lname:find("kick") then return "Kick loop" end
     if lname:find("snare") then return "Snare loop" end
@@ -68,8 +81,8 @@ local function CheckSpecialName(name)
     if lname:find("laser") then return "Laser loop" end
     if lname:find("build") then return "BuildUp" end
     if lname:find("top") then return "Top loop" end
-    if lname:find("melody") then return "Melody loop" end
-    return "Drum Loop"
+    if lname:find("beat") then return "Beat loop" end
+    if lname:find("drum") then return "Drum loop" end
   end
   if lname:find("drum") then
     if lname:find("build") then return "BuildUp" end
@@ -81,6 +94,9 @@ local function CheckSpecialName(name)
   end
   if lname:find("scream") then
     return "Vocal Scream"
+  end
+  if lname:find("atmo") then
+    return "Atmoshpere"
   end
   if lname:find("hh") or lname:find("chat") then
     return "Hat"
@@ -101,9 +117,6 @@ local function CheckSpecialName(name)
   end
   if lname:find("808") then
     return "Bass 808"
-  end
-  if lname:find("atmo") then
-    return "Atmoshpere"
   end
   
   for _, key in ipairs(special_names) do
