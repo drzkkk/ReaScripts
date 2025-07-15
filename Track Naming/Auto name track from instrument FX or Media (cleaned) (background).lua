@@ -1,5 +1,5 @@
 -- @description Auto name track from instrument FX or Media (cleaned) (background)
--- @version 1.1
+-- @version 1.2
 -- @changelog Fixed tags
 -- @tags fx, fx chain, instrument, name, auto
 -- @author drzk
@@ -58,9 +58,8 @@ local function CheckSpecialName(name)
   if lname:find("loop") then
     if lname:find("melody") then return "Melody loop" end
     if lname:find("lead") then return "Lead loop" end
-    if lname:find("synth") then return "Synth loop" end
-    if lname:find("pad") then return "Pad loop" end
     if lname:find("bass") then return "Bass loop" end
+    if lname:find("pad") then return "Pad loop" end
     if lname:find("arp") then return "Arp loop" end
     if lname:find("chord") then return "Chord loop" end
     if lname:find("organ") then return "Organ loop" end
@@ -80,6 +79,7 @@ local function CheckSpecialName(name)
     if lname:find("perc") then return "Perc loop" end
     if lname:find("laser") then return "Laser loop" end
     if lname:find("build") then return "BuildUp" end
+    if lname:find("synth") then return "Synth loop" end
     if lname:find("top") then return "Top loop" end
     if lname:find("beat") then return "Beat loop" end
     if lname:find("drum") then return "Drum loop" end
