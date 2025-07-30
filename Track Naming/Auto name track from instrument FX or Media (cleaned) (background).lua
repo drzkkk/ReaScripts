@@ -1,6 +1,6 @@
 -- @description Auto name track from instrument FX or Media (cleaned) (background)
--- @version 1.3
--- @changelog Fixed issue with user-defined names being overwritten after project reload
+-- @version 1.4
+-- @changelog Respect manual renames across project reload
 -- @tags fx, fx chain, instrument, name, auto
 -- @author drzk
 
@@ -15,8 +15,8 @@ local prev_fx_table = {}
 local prev_inst_table = {}
 local prev_item_ids = {}
 local prev_item_count = {}
-local track_pending_rename = {}
 local prev_auto_name = {}
+local manual_name_table = {}
 
 local last_change_count = reaper.GetProjectStateChangeCount()
 
@@ -169,31 +169,12 @@ local function SetTrackName(track, guid, name)
   prev_auto_name[guid] = name
 end
 
-local function SavePrevAutoNames()
-  local serialized = ""
-  for guid, name in pairs(prev_auto_name) do
-    serialized = serialized .. guid .. "|" .. name .. "\n"
-  end
-  reaper.GetSetProjectInfo_String(0, "PROJECT_AUTONAME", serialized, true)
-end
-
-local function LoadPrevAutoNames()
-  local _, serialized = reaper.GetSetProjectInfo_String(0, "PROJECT_AUTONAME", "", false)
-  prev_auto_name = {}
-  for line in serialized:gmatch("[^\n]+") do
-    local guid, name = line:match("(.+)|(.+)")
-    if guid and name then
-      prev_auto_name[guid] = name
-    end
-  end
-end
-
 local function UpdateTracks()
   for i = 0, reaper.CountTracks(0) - 1 do
     local track = reaper.GetTrack(0, i)
     local guid = reaper.GetTrackGUID(track)
-
     local _, cur_name = reaper.GetSetMediaTrackInfo_String(track, "P_NAME", "", false)
+
     local fx_count = reaper.TrackFX_GetCount(track)
     local inst_index = reaper.TrackFX_GetInstrument(track)
     local inst_name = ""
@@ -202,8 +183,12 @@ local function UpdateTracks()
       inst_name = SanitizeFXName(fxname)
     end
 
+    -- Обнаружение ручного переименования
     if cur_name ~= "" and cur_name ~= prev_auto_name[guid] and not IsDefaultReaperName(cur_name) then
-      prev_auto_name[guid] = nil
+      if prev_auto_name[guid] then
+        manual_name_table[guid] = cur_name
+        prev_auto_name[guid] = nil
+      end
     end
 
     local prev_fx = prev_fx_table[guid] or 0
@@ -220,8 +205,8 @@ local function UpdateTracks()
       end
     end
 
-    if new_items then
-      if (cur_name == "" or IsDefaultReaperName(cur_name)) and (prev_auto_name[guid] == nil or cur_name == prev_auto_name[guid]) then
+    if new_items and not manual_name_table[guid] then
+      if cur_name == "" or cur_name == prev_auto_name[guid] or IsDefaultReaperName(cur_name) or prev_auto_name[guid] == nil then
         local first_item, first_pos = nil, math.huge
         for item in pairs(items) do
           local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
@@ -238,17 +223,21 @@ local function UpdateTracks()
       end
     end
 
-    if fx_count > prev_fx and (cur_name == "" or cur_name == prev_auto_name[guid] or IsDefaultReaperName(cur_name)) and inst_name ~= "" then
-      SetTrackName(track, guid, inst_name)
-    elseif fx_count < prev_fx and inst_index == -1 and cur_name == prev_inst then
+    if fx_count > prev_fx and not manual_name_table[guid] and inst_name ~= "" then
+      if cur_name == "" or cur_name == prev_auto_name[guid] or IsDefaultReaperName(cur_name) then
+        SetTrackName(track, guid, inst_name)
+      end
+    elseif fx_count < prev_fx and inst_index == -1 and cur_name == prev_inst and not manual_name_table[guid] then
       SetTrackName(track, guid, "")
-    elseif inst_index ~= -1 and cur_name == prev_inst and inst_name ~= prev_inst then
+    elseif inst_index ~= -1 and cur_name == prev_inst and inst_name ~= prev_inst and not manual_name_table[guid] then
       SetTrackName(track, guid, inst_name)
     end
 
     if inst_index == -1 and count == 0 and cur_name ~= "" then
-      if cur_name == prev_auto_name[guid] or IsDefaultReaperName(cur_name) then
+      if cur_name == prev_auto_name[guid] or manual_name_table[guid] or IsDefaultReaperName(cur_name) then
         SetTrackName(track, guid, "")
+        manual_name_table[guid] = nil
+        prev_auto_name[guid] = nil
       end
     end
 
@@ -260,12 +249,10 @@ local function UpdateTracks()
 end
 
 local function Main()
-  LoadPrevAutoNames()
   local current_change_count = reaper.GetProjectStateChangeCount()
   if current_change_count ~= last_change_count then
     last_change_count = current_change_count
     UpdateTracks()
-    SavePrevAutoNames()
   end
   reaper.defer(Main)
 end
