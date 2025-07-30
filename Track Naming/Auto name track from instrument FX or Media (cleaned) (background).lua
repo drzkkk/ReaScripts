@@ -1,6 +1,6 @@
 -- @description Auto name track from instrument FX or Media (cleaned) (background)
--- @version 1.5
--- @changelog Respect manual renames across project reload, treat empty track name as reset of custom name
+-- @version 1.6
+-- @changelog Fixed reseting custom names
 -- @tags fx, fx chain, instrument, name, auto
 -- @author drzk
 
@@ -42,10 +42,6 @@ local function LoadManualNames()
     local _, name = reaper.GetProjExtState(0, "AutoTrackNamer", guid)
     if name ~= "" then
       manual_name_table[guid] = name
-      local _, current_name = reaper.GetSetMediaTrackInfo_String(track, "P_NAME", "", false)
-      if current_name ~= name then
-        reaper.GetSetMediaTrackInfo_String(track, "P_NAME", name, true) -- Восстанавливаем имя
-      end
     end
   end
 end
