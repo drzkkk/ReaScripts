@@ -1,6 +1,6 @@
 -- @description Auto name track from instrument FX or Media (cleaned) (background)
--- @version 1.4
--- @changelog Respect manual renames across project reload
+-- @version 1.5
+-- @changelog Respect manual renames across project reload, treat empty track name as reset of custom name
 -- @tags fx, fx chain, instrument, name, auto
 -- @author drzk
 
@@ -17,6 +17,38 @@ local prev_item_ids = {}
 local prev_item_count = {}
 local prev_auto_name = {}
 local manual_name_table = {}
+
+local function SaveManualNames()
+  local changed = false
+  for guid, name in pairs(manual_name_table) do
+    local _, old_name = reaper.GetProjExtState(0, "AutoTrackNamer", guid)
+    if old_name ~= name then
+      reaper.SetProjExtState(0, "AutoTrackNamer", guid, name)
+      changed = true
+    end
+  end
+
+  if changed then
+    reaper.MarkProjectDirty(0)
+    reaper.Main_SaveProject(0, false)
+  end
+end
+
+local function LoadManualNames()
+  manual_name_table = {}
+  for i = 0, reaper.CountTracks(0) - 1 do
+    local track = reaper.GetTrack(0, i)
+    local guid = reaper.GetTrackGUID(track)
+    local _, name = reaper.GetProjExtState(0, "AutoTrackNamer", guid)
+    if name ~= "" then
+      manual_name_table[guid] = name
+      local _, current_name = reaper.GetSetMediaTrackInfo_String(track, "P_NAME", "", false)
+      if current_name ~= name then
+        reaper.GetSetMediaTrackInfo_String(track, "P_NAME", name, true) -- Восстанавливаем имя
+      end
+    end
+  end
+end
 
 local last_change_count = reaper.GetProjectStateChangeCount()
 
@@ -182,12 +214,19 @@ local function UpdateTracks()
       local _, fxname = reaper.TrackFX_GetFXName(track, inst_index, "")
       inst_name = SanitizeFXName(fxname)
     end
+    
+    if cur_name == "" and manual_name_table[guid] then
+          manual_name_table[guid] = nil
+          prev_auto_name[guid] = nil
+          reaper.SetProjExtState(0, "AutoTrackNamer", guid, "")
+          SaveManualNames()
+    end
 
-    -- Обнаружение ручного переименования
     if cur_name ~= "" and cur_name ~= prev_auto_name[guid] and not IsDefaultReaperName(cur_name) then
       if prev_auto_name[guid] then
         manual_name_table[guid] = cur_name
         prev_auto_name[guid] = nil
+        SaveManualNames()
       end
     end
 
@@ -234,10 +273,11 @@ local function UpdateTracks()
     end
 
     if inst_index == -1 and count == 0 and cur_name ~= "" then
-      if cur_name == prev_auto_name[guid] or manual_name_table[guid] or IsDefaultReaperName(cur_name) then
+      if cur_name == prev_auto_name[guid] or IsDefaultReaperName(cur_name) then
         SetTrackName(track, guid, "")
         manual_name_table[guid] = nil
         prev_auto_name[guid] = nil
+        SaveManualNames()
       end
     end
 
@@ -248,8 +288,17 @@ local function UpdateTracks()
   end
 end
 
+local last_project_name = reaper.GetProjectName(0, "")
+
 local function Main()
   local current_change_count = reaper.GetProjectStateChangeCount()
+  local current_project_name = reaper.GetProjectName(0, "")
+  
+  if current_project_name ~= last_project_name then
+    LoadManualNames()
+    last_project_name = current_project_name
+  end
+  
   if current_change_count ~= last_change_count then
     last_change_count = current_change_count
     UpdateTracks()
@@ -257,4 +306,6 @@ local function Main()
   reaper.defer(Main)
 end
 
+LoadManualNames()
+reaper.atexit(SaveManualNames)
 Main()
