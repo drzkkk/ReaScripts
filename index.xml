@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="af642f0cb7f0c7363f34daaa07360a7684dc9b1f">
+<index version="1" name="drzk" commit="afb36af2934a1c2e2b9e20ab7945f368f7be9e42">
   <category name="Coloring">
     <reapack name="Set item color to track color (selected items or all items).lua" type="script" desc="Set item color to track color (selected items or all items)">
       <version name="1.0" author="drzk" time="2025-08-14T06:36:18Z">
@@ -29,10 +29,14 @@
     </reapack>
   </category>
   <category name="FX Management">
-    <reapack name="Add FX To selected item or track.lua" type="script" desc="Smart Add FX To selected item or track">
+    <reapack name="Add FX To selected item or track.lua" type="script" desc="Add FX To selected item or track">
       <version name="1.0" author="drzk" time="2025-08-14T06:36:18Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="main">https://github.com/drzkkk/ReaScripts/raw/cfa38134b2c386f8b75bb02db632e0322b8dedc3/FX%20Management/Add%20FX%20To%20selected%20item%20or%20track.lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-08-14T06:50:20Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/afb36af2934a1c2e2b9e20ab7945f368f7be9e42/FX%20Management/Add%20FX%20To%20selected%20item%20or%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Auto move instrument FX to top of chain (background).lua" type="script" desc="Auto move instrument FX to top of chain (background)">
