@@ -1,5 +1,5 @@
 -- @description Duplicate items or tracks (without move visible area)
--- @version 1.0
+-- @version 1.1
 -- @tags duplicate, items, tracks
 -- @changelog First version
 -- @author drzk
