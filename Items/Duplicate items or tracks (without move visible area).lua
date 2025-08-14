@@ -1,5 +1,8 @@
---   @description Duplicate items or tracks (without move visible area)
---   author drzk 
+-- @description Duplicate items or tracks (without move visible area)
+-- @version 1.0
+-- @tags duplicate, items, tracks
+-- @changelog First version
+-- @author drzk
 
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
