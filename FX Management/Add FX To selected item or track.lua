@@ -1,5 +1,5 @@
--- @description Smart Add FX To selected item or track
--- @version 1.0
+-- @description Add FX To selected item or track
+-- @version 1.1
 -- @tags fx chain, fx
 -- @changelog First version
 -- @author drzk
