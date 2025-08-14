@@ -1,5 +1,5 @@
--- @description Smart Reverse Audio Items with Razor, Selected or Under Mouse (includes fades)
--- @version 1.0
+-- @description Reverse item with Razor, Selected or Under Mouse (includes fades)
+-- @version 1.1
 -- @tags reverse items
 -- @changelog First version
 -- @author drzk
