@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="drzk" commit="cfa38134b2c386f8b75bb02db632e0322b8dedc3">
+<index version="1" name="drzk" commit="af642f0cb7f0c7363f34daaa07360a7684dc9b1f">
   <category name="Coloring">
     <reapack name="Set item color to track color (selected items or all items).lua" type="script" desc="Set item color to track color (selected items or all items)">
       <version name="1.0" author="drzk" time="2025-08-14T06:36:18Z">
@@ -91,10 +91,14 @@
         <source main="main">https://github.com/drzkkk/ReaScripts/raw/cfa38134b2c386f8b75bb02db632e0322b8dedc3/Items/Remove%20selected%20items,%20envelope%20points%20or%20item%20under%20mouse.lua</source>
       </version>
     </reapack>
-    <reapack name="Reverse item with Razor, Selected or Under Mouse (includes fades).lua" type="script" desc="Smart Reverse Audio Items with Razor, Selected or Under Mouse (includes fades)">
+    <reapack name="Reverse item with Razor, Selected or Under Mouse (includes fades).lua" type="script" desc="Reverse item with Razor, Selected or Under Mouse (includes fades)">
       <version name="1.0" author="drzk" time="2025-08-14T06:36:18Z">
         <changelog><![CDATA[First version]]></changelog>
         <source main="main">https://github.com/drzkkk/ReaScripts/raw/cfa38134b2c386f8b75bb02db632e0322b8dedc3/Items/Reverse%20item%20with%20Razor,%20Selected%20or%20Under%20Mouse%20(includes%20fades).lua</source>
+      </version>
+      <version name="1.1" author="drzk" time="2025-08-14T06:43:11Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/drzkkk/ReaScripts/raw/af642f0cb7f0c7363f34daaa07360a7684dc9b1f/Items/Reverse%20item%20with%20Razor,%20Selected%20or%20Under%20Mouse%20(includes%20fades).lua</source>
       </version>
     </reapack>
     <reapack name="Toggle select EVEN items on track or selected items if any.lua" type="script" desc="Toggle select EVEN items on track or selected items if any">
